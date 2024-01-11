@@ -1,14 +1,28 @@
 <x-layout>
-    @if(session()->has('success'))
-        <div class="alert alert-success text-center" role="alert" id="success-message">
-            <p>{{ session('success') }}</p>
+{{--    @if(session()->has('success'))--}}
+{{--        <div class="alert alert-success text-center" role="alert" id="success-message">--}}
+{{--            <p>{{ session('success') }}</p>--}}
+{{--        </div>--}}
+
+{{--        <script>--}}
+{{--            // Automatikus üzenet eltűnés 5 másodperc után--}}
+{{--            $(document).ready(function () {--}}
+{{--                setTimeout(function () {--}}
+{{--                    $('#success-message').fadeOut('slow');--}}
+{{--                }, 5000); // 5000 miliszekundum = 5 másodperc--}}
+{{--            });--}}
+{{--        </script>--}}
+{{--    @endif--}}
+    @if(session()->has('status'))
+        <div class="alert alert-success text-center" role="alert" id="status-message">
+            <p>{{ session('status') }}</p>
         </div>
 
         <script>
             // Automatikus üzenet eltűnés 5 másodperc után
             $(document).ready(function () {
                 setTimeout(function () {
-                    $('#success-message').fadeOut('slow');
+                    $('#status-message').fadeOut('slow');
                 }, 5000); // 5000 miliszekundum = 5 másodperc
             });
         </script>

@@ -17,12 +17,10 @@
 {{--</x-app-layout>--}}
 <x-layout>
     <h1 class="text-3xl text-center font-bold my-6">Be vagy jelentkezve kedves  {{ Auth::user()->name }}!</h1>
-    <form method="POST" action="{{ route('logout') }}">
+    <form method="POST" class="mx-auto text-center" action="{{ route('logout') }}">
         @csrf
-        <x-dropdown-link :href="route('logout')"
-                         onclick="event.preventDefault();
-                         this.closest('form').submit();">
-            {{ __('Log Out') }}
-        </x-dropdown-link>
+        <button class="text-2xl p-3 border bg-amber-200 hover:bg-gray-400 text-black" href="route('logout')">
+            Kijelentkezés
+        </button>
     </form>
 </x-layout>

@@ -13,6 +13,20 @@
             });
         </script>
     @endif
+    @if(session()->has('status'))
+        <div class="alert alert-success text-center" role="alert" id="status-message">
+            <p>{{ session('status') }}</p>
+        </div>
+
+        <script>
+            // Automatikus üzenet eltűnés 5 másodperc után
+            $(document).ready(function () {
+                setTimeout(function () {
+                    $('#status-message').fadeOut('slow');
+                }, 5000); // 5000 miliszekundum = 5 másodperc
+            });
+        </script>
+    @endif
     <p class="text-2xl font-bold text-center my-5">Bejelentkezés</p>
     <form action="{{ route('login') }}" method="POST" class="w-1/3 mx-auto mt-10 border rounded p-3">
         @csrf
