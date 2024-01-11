@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CitiesController;
-use App\Http\Controllers\CountriesController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [CountriesController::class, 'getCountries']);
-Route::get('/get-cities/{countryId}', [CitiesController::class, 'getCitiesByCountry']);
-
+Route::get('/', [FormController::class, 'getCountries'])->middleware('guest');
+Route::get('/get-cities/{countryId}', [FormController::class, 'getCitiesByCountry'])->middleware('guest');
 Route::post('/register_form', [RegisterController::class, 'index'])->name('register_form');
 
 

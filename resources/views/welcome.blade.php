@@ -127,9 +127,9 @@
         </div>
 
         <div class="mt-3">
-            <a href="/" class="btn btn-link d-block mx-auto">Elfelejtetted a
+            <a href="{{ route('password.request') }}" class="btn btn-link d-block mx-auto">Elfelejtetted a
                 jelszavad?</a>
-            <a href="/" class="btn btn-link d-block mx-auto">Már regisztráltál?</a>
+            <a href="{{ route('login') }}" class="btn btn-link d-block mx-auto">Már regisztráltál?</a>
         </div>
     </form>
 
